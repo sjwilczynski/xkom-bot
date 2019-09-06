@@ -16,7 +16,7 @@ XKOM_URL = "https://www.x-kom.pl"
 QUANTITY_LEFT_SOLD_CLASS = "gs-quantity"
 
 
-def main(mytimer: func.TimerRequest) -> None:
+def main(mytimer: func.TimerRequest):
 
     response = requests.get(XKOM_URL)
     response.raise_for_status()
