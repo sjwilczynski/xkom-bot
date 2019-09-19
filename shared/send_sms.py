@@ -32,10 +32,10 @@ def send_sms():
     [items_left, items_sold] = list(
         map(lambda x: x.text, hot_shot_subtree.find_all(class_=QUANTITY_LEFT_SOLD_CLASS)))
 
-    left_items_part = 'By now %s were sold and %s are left.' % (
+    left_items_part = '%s/%s left.' % (
         items_sold, items_left) if items_left is not None else 'Sold out :('
 
-    message_text = 'New deal is available: %s. The original price is %s and the new price is %s. %s discount! ' % (
+    message_text = '%s. OP: %s, NP: %s. %s disc.! ' % (
         product_name,
         original_price.amount_text + original_price.currency,
         new_price.amount_text + original_price.currency,
