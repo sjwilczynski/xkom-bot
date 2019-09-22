@@ -29,17 +29,12 @@ def send_sms():
         hot_shot_subtree.find(class_=NEW_PRICE_CLASS).text)
     percentage_discount = str(
         int((1 - new_price.amount / original_price.amount) * 100)) + "%"
-    [items_left, items_sold] = list(
-        map(lambda x: x.text, hot_shot_subtree.find_all(class_=QUANTITY_LEFT_SOLD_CLASS)))
-
-    left_items_part = '%s/%s left.' % (
-        items_sold, items_left) if items_left is not None else 'Sold out :('
 
     message_text = '%s. OP: %s, NP: %s. %s disc.! ' % (
         product_name,
         original_price.amount_text + original_price.currency,
         new_price.amount_text + original_price.currency,
-        percentage_discount) + left_items_part
+        percentage_discount)
 
     account_sid = os.environ['account_sid']
     auth_token = os.environ['auth_token']
