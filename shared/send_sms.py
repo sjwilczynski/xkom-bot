@@ -1,34 +1,12 @@
-from html import unescape
-
-import bs4
-import requests
-import os
-from price_parser import Price
 from twilio.rest import Client
+import os
+from get_data_from_webpage import get_data_from_webpage
 
-NEW_PRICE_CLASS = "new-price"
-OLD_PRICE_CLASS = "old-price"
-PRODUCT_NAME_ATTRIBUTE = "data-product-name"
-HOT_SHOT_ID = "#hotShot"
-XKOM_URL = "https://www.x-kom.pl"
-QUANTITY_LEFT_SOLD_CLASS = "gs-quantity"
 
 def send_sms():
-    
-    response = requests.get(XKOM_URL)
-    response.raise_for_status()
-    response_text = bs4.BeautifulSoup(response.text, features="lxml")
 
-    hot_shot_subtree = response_text.select(HOT_SHOT_ID)[0]
-
-    product_name = unescape(hot_shot_subtree.find(
-        attrs={("%s" % PRODUCT_NAME_ATTRIBUTE): True})[PRODUCT_NAME_ATTRIBUTE])
-    original_price = Price.fromstring(
-        hot_shot_subtree.find(class_=OLD_PRICE_CLASS).text)
-    new_price = Price.fromstring(
-        hot_shot_subtree.find(class_=NEW_PRICE_CLASS).text)
-    percentage_discount = str(
-        int((1 - new_price.amount / original_price.amount) * 100)) + "%"
+    [product_name, original_price, new_price,
+        percentage_discount, category] = get_data_from_webpage()
 
     message_text = '%s. OP: %s, NP: %s. %s disc.! ' % (
         product_name,

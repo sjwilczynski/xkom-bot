@@ -1,6 +1,6 @@
 import azure.functions as func
-from __app__.shared import send_sms
+from __app__.shared import process_new_data
 
 
 def main(mytimer: func.TimerRequest):
-    send_sms.send_sms()
+    process_new_data.process_new_data_from_webpage()
