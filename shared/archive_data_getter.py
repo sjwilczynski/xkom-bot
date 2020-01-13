@@ -2,7 +2,7 @@ from html import unescape
 import json
 import bs4
 import requests
-from get_data_from_webpage import get_category
+from data_getter import get_category
 from googlesearch import search, get_random_user_agent
 from db import insert
 
