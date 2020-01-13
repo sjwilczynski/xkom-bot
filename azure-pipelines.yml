@@ -8,7 +8,7 @@ trigger:
 
 variables:
   # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: 'b63678fc-4bab-4941-b4cb-69defc296df7'
+  azureSubscription: '12513aaa-6a10-4e16-90b1-5322ef2aa7f4'
 
   # Function app name
   functionAppName: 'xkom-hot-shot'
