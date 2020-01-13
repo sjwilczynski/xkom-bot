@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/sjwilczynski/GithubRepos/_apis/build/status/sjwilczynski.xkom-bot?branchName=master)](https://dev.azure.com/sjwilczynski/GithubRepos/_build/latest?definitionId=1&branchName=master)
 # xkom-bot
 
 A simple Python script that informs me by SMS about new _hot shot_ discounts available at [X-KOM](https://www.x-kom.pl) store.
