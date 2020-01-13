@@ -12,3 +12,5 @@ If you also want to publish `local.settings.json` (containing environment variab
 ```
 func azure functionapp publish xkom-hot-shot --publish-local-settings -i --build remote
 ```
+
+[Here](https://www.scalyr.com/blog/azure-functions-in-python-a-simple-introduction/) you can find how to test your function locally.
