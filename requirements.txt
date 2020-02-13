@@ -14,7 +14,7 @@ mccabe==0.6.1
 price-parser==0.3.3
 pycodestyle==2.5.0
 PyJWT==1.7.1
-pylint==2.3.1
+pylint==2.4.4
 pymongo==3.10.1
 PySocks==1.7.1
 pytz==2019.3
