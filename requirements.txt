@@ -1,7 +1,7 @@
 astroid==2.3.3
 attrs==19.3.0
 autopep8==1.5
-azure-functions==1.1.0
+azure-functions==1.2.0
 beautifulsoup4==4.8.2
 certifi==2019.11.28
 chardet==3.0.4
